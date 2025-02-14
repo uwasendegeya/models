@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Prediction</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            background-color: black;
+            color: white;
+        }
+        input, button {
+            padding: 10px;
+            margin: 10px;
+            background-color:white;
+        }
+
+        form {
+            width: 300px;
+            margin-left: 30px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Diabetes Prediction</h1>
+    <form action="/predict" method="POST">
+        <label for="Pregnancies">Pregnancies:</label><br>
+        <input type="number" id="Pregnancies" name="Pregnancies" required><br>
+        <label for="Glucose">Glucose:</label><br>
+        <input type="number" id="Glucose" name="Glucose" required><br>
+        <label for="BloodPressure">Blood Pressure:</label><br>
+        <input type="number" id="BloodPressure" name="BloodPressure" required><br>
+        <label for="SkinThickness">Skin Thickness:</label><br>
+        <input type="number" id="SkinThickness" name="SkinThickness" required><br>
+        <label for="Insulin">Insulin:</label><br>
+        <input type="number" id="Insulin" name="Insulin" required><br>
+        <label for="BMI">BMI:</label><br>
+        <input type="text" id="BMI" name="BMI" required><br>
+        <label for="DiabetesPedigreeFunction">Diabetes Pedigree Function:</label><br>
+        <input type="text" id="DiabetesPedigreeFunction" name="DiabetesPedigreeFunction" required><br>
+        <label for="Age">Age:</label><br>
+        <input type="number" id="Age" name="Age" required><br>
+        <button type="submit">Predict</button>
+    </form>
+
+    {% if result %}
+        <h2>Prediction Result: {{ result }}</h2>
+    {% endif %}
+</body>
+</html>
