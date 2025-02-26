@@ -1,0 +1,2 @@
+file=open("index.txt","w+")
+file.write("this is home.txt")
